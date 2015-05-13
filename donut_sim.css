@@ -1,0 +1,20 @@
+p {
+    color: blue;
+    font-size: 33
+}
+table, th, td {
+	text-align: center;
+    border: 1px solid black
+}
+body{
+	text-align: center;
+}
+
+
+#rowTitle {
+    color: blue
+}
+
+.column {
+	color: green;
+}
