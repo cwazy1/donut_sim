@@ -13,12 +13,36 @@ function DonutMaster(){
 
 	this.generateReport = function() {
 		for (var i = 0; i < this.listOfShops.length; i++){
+			//adding jQuery here to add in a new row
+			$("tbody").append("<tr id='"+i+"'></tr>")
+			$("#" + i).append("<td>" + this.listOfShops[i].franchiseLocation + "</td>")
+			$("#" + i).append("<td>" + this.listOfShops[i].getDonutsPerHour() + "</td>")
+			$("#" + i).append("<td>" + this.listOfShops[i].getDonutsPerDay() + "</td>")
+			
+
+
+
 			console.log(this.listOfShops[i].franchiseLocation)
 			console.log("Avg donut production per hour at "+ this.listOfShops[i].franchiseLocation + " location, is: " + this.listOfShops[i].getDonutsPerHour())
 			console.log("Avg donut production per day at  " + this.listOfShops[i].franchiseLocation + " location, is: " + this.listOfShops[i].getDonutsPerDay())
 		}
 	}
 }
+	$("#dt").on("click", function(){
+		$("#0").css('background-color', 'green')
+	})
+	$("#ch").on("click", function(){
+		$("#1").css('background-color', 'blue')
+	})
+	$("#slu").on("click", function(){
+		$("#2").css('background-color', 'red')
+	})
+	$("#ww").on("click", function(){
+		$("#3").css('background-color', 'yellow')
+	})
+	$("#bd").on("click", function(){
+		$("#4").css('background-color', 'orange')
+	})
 
 //this is the class of donut shop which will be used by the addShop method to push into an array.
 function donutShop(l,m,n,a) {
@@ -54,3 +78,4 @@ x.addShop('wedgewood', 2, 28, 1.25)
 x.addShop('ballard', 8, 58, 3.75)
 //this finally runs the methods within the instances in the array to show the data we want.
 x.generateReport()
+
